@@ -9,14 +9,13 @@
 </head>
 <body>
     {% block header %}{% endblock header %}
-
-    {% block content %} <nav>
+    <nav>
         <ul>
           <li><a href="{{ url_for('index') }}">Inicio</a></li>
           <li><a href="{{ url_for('cadastrar_jogo') }}">Cadastrar Jogo</a></li>
           <li><a href="{{ url_for('listar_jogos') }}">Lista de Jogos</a></li>
         </ul>
       </nav>
-      {% endblock content %}
+    {% block content %}{% endblock content %}
 </body>
 </html>

@@ -10,6 +10,13 @@ def index():
 
 @app.route("/listar-jogos/")
 def listar_jogos():
+    filtro_ano = request.args.get("filtro-ano")
+    if filtro_ano:
+        jogos_filtrados = []
+        for jogo in jogos:
+            if jogo["ano"] == int(filtro_ano):
+                jogos_filtrados += [jogo]
+        return render_template("listar_jogos.html", jogos=jogos_filtrados)
     return render_template("listar_jogos.html", jogos=jogos)
 
 @app.route("/criar/jogo/", methods=["GET", "POST"])
@@ -21,3 +28,4 @@ def cadastrar_jogo():
         return redirect(url_for("listar_jogos"))
     else:
         return render_template("cadastrar_jogo.html")
+

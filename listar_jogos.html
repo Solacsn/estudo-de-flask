@@ -17,6 +17,11 @@
           <input type="text" name="filtro-ano">
           <input type="submit" value="Filtrar">
         </form>
+        <ul>
+            {% for jogo in jogos %}
+              <li>{{ jogo.nome }} - {{ jogo.ano }}</li>
+            {% endfor %}
+          </ul>
     </section>
   </main>
 {% endblock content %}
