@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <main>
+    <section>
+      <h2>Formulário de Cadastro</h2>
+      <form action="{{ url_for('cadastrar_jogo') }}" method="POST">
+        <input type="text" name="nome" placeholder="Nome">
+        <input type="number" name="ano" placeholder="Ano de Lançamento">
+        <input type="submit" value="Enviar">
+      </form>
+    </section>
+  </main>
+{% endblock content %}

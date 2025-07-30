@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %} Lista Jogos {% endblock title %}
+
+{% block header %}
+  <header>
+    <h1>Lista de Jogos</h1>
+  </header>
+{% endblock header %}
+
+{% block content %}
+  <main>
+    <section>
+        <h2>Jogos</h2>
+        <form action="{{ url_for('listar_jogos') }}" method="GET">
+          <label for="filtro-ano">Ano de Lançamento</label><br>
+          <input type="text" name="filtro-ano">
+          <input type="submit" value="Filtrar">
+        </form>
+    </section>
+  </main>
+{% endblock content %}

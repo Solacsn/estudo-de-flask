@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Vapor - {% block title %}{% endblock title %}</title>
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/main.css') }}"
+   >
+</head>
+<body>
+    {% block header %}{% endblock header %}
+
+    {% block content %} <nav>
+        <ul>
+          <li><a href="{{ url_for('index') }}">Inicio</a></li>
+          <li><a href="{{ url_for('cadastrar_jogo') }}">Cadastrar Jogo</a></li>
+          <li><a href="{{ url_for('listar_jogos') }}">Lista de Jogos</a></li>
+        </ul>
+      </nav>
+      {% endblock content %}
+</body>
+</html>

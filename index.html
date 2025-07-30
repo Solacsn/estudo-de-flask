@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %} Início {% endblock title %}
+
+{% block header %}
+  <header>
+      <h1>Vapor - Catálogo de Jogos</h1>
+  </header>
+{% endblock header %}
+
+{% block content %}
+  <main>
+    <section>
+      <h2>Jogos Recentes</h2>
+      <ul>
+        {% for jogo in jogos %}
+        {% if jogo.ano > 2015 %}
+          <li>
+            <b>{{ jogo.nome }}</b> - {{ jogo.ano }}
+          </li>
+        {% endif %}
+      {% endfor %}
+      </ul>
+    </section>
+  </main>
+{% endblock content %}
